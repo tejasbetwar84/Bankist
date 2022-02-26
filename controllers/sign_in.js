@@ -24,6 +24,21 @@ module.exports.signIn=function(req,res){
             return res.redirect('back');
         }
         })
+    };
+
+    module.exports.user=function(req,res){
+        User.findOne({email:req.body.email},function(err,user){
+        
+        if(user.confirm_password==req.body.password){
+            return res.render('user',{
+                title : "User",
+                user : user,
+            
+            })
+        }else{
+            return res.redirect('back');
+        }
+        })
     }
 
     
