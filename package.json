@@ -1,0 +1,14 @@
+{
+  "name": "bankist",
+  "version": "1.0.0",
+  "description": "Banking",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tejas Betwar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
