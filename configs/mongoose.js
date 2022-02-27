@@ -10,3 +10,5 @@ bankist_db.on('error',console.error.bind(console,'error connecting to DataBASE')
 bankist_db.once('open',function(){
     console.log("Successfully connected to DataBase");
 })
+
+

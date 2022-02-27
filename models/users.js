@@ -18,10 +18,15 @@ const userSchema=new mongoose.Schema({
     confirm_password : {
         type : String,
         required: true,
-    }
+    },
+    Transactions : [{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'Transactions'
+    }]
 },{
     timestamps:true,
 });
 
 const User=mongoose.model('User',userSchema);
 module.exports=User;
+
