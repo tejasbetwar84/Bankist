@@ -7,8 +7,13 @@ module.exports.loan=function(req,res){
           transactionType : "deposit",
           amount : req.body.amount,
       },function(err,transaction){
+          if(err){
+              console.log('problem !');
+          }
+          
           user.Transactions.push(transaction);
-
+          user.save();
+         
           return res.redirect('back');
       })
     })

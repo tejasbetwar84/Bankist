@@ -33,7 +33,7 @@ module.exports.signInPage=function(req,res){
     }
 
     module.exports.user=function(req,res){
-        User.findOne({email:req.body.email},function(err,user){
+        User.findOne({email:req.body.email}).populate('Transactions').exec(function(err,user){
         if(user){
         if(user.confirm_password==req.body.password){
             res.cookie("user_id",user._id);
@@ -56,7 +56,7 @@ module.exports.signInPage=function(req,res){
     };
 
     module.exports.user_=function(req,res){
-        User.findById(req.cookies.user_id,function(err,user){
+        User.findById(req.cookies.user_id).populate('Transactions').exec(function(err,user){
             return res.render('user',{
                 title : "User",
                 user : user,

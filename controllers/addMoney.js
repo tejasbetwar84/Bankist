@@ -6,9 +6,10 @@ module.exports.add=function(req,res){
         Transactions.create({
             User : user,
             transactionType : "deposit",
-            amount : req.body.deposit,
+            amount : req.body.amount,
         },function(err,transaction){
             user.Transactions.push(transaction);
+            user.save();
   
             return res.redirect('back');
         })
