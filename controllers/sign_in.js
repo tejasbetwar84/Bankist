@@ -53,7 +53,19 @@ module.exports.signInPage=function(req,res){
         })
     
 
-    }
+    };
+
+    module.exports.user_=function(req,res){
+        User.findById(req.cookies.user_id,function(err,user){
+            return res.render('user',{
+                title : "User",
+                user : user,
+            
+        })
+    })
+}
+
+
 
     
     

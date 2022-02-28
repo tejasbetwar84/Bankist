@@ -6,6 +6,7 @@ const loanController=require('../controllers/loan');
 const addMoneycontroller=require('../controllers/addMoney');
 
 router.post('/user',signIncontroller.user);
+router.get('/user',signIncontroller.user_)
 router.post('/addMoney',addMoneycontroller.add);
 router.post('/loan',loanController.loan);
 
